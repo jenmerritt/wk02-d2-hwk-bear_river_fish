@@ -25,8 +25,15 @@ class BearsTest < MiniTest::Test
     assert_equal(0, @bear.food_in_stomach)
   end
 
+  def test_can_add_fish
+    fish = Fish.new("Salmon")
+    @bear.eat_fish(fish)
+    assert_equal(1, @bear.food_in_stomach)
+  end
 
-
+  def test_can_bear_roar
+    assert_equal("ROOAARR", @bear.roar)
+  end
 
 
 end

@@ -12,4 +12,12 @@ class Bear
     return @stomach.length
   end
 
+  def eat_fish(fish)
+    @stomach.push(fish)
+  end
+
+  def roar
+    return "ROOAARR"
+  end
+
 end

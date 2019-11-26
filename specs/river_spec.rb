@@ -30,7 +30,19 @@ class RiverTest < MiniTest::Test
 
   def test_can_find_fish_by_name
     fish = @river.find_fish_by_name("Salmon")
-    assert_equal("Salmon", fish)
+    assert_equal("Salmon", fish.name)
+  end
+
+  def test_can_remove_fish
+    @river.remove_fish(@fish1)
+    assert_equal(2, @river.fish_in_river)
+  end
+
+  def test_bear_takes_fish_from_river
+    bear = Bear.new("Winnie", "Pooh")
+    @river.bear_takes_fish_from_river(@fish1, bear)
+    assert_equal(2, @river.fish_in_river)
+    assert_equal(1, bear.food_in_stomach)
   end
 
 end
