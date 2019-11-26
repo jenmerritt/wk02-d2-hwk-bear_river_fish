@@ -2,18 +2,15 @@ require('minitest/autorun')
 require('minitest/reporters')
 Minitest::Reporters.use! Minitest::Reporters::SpecReporter.new
 
+require_relative('../river')
 require_relative('../fish')
+require_relative('../bear')
 
 class FishTest < MiniTest::Test
 
-  def setup
-    @fish1 = Fish.new("Salmon")
-    @fish2 = Fish.new("Trout")
-    @fish3 = Fish.new("Mackarel")
+  def test_can_get_fish_name
+    fish = Fish.new("Salmon")
+    assert_equal("Salmon", fish.name)
   end
-
-def test_can_get_fish_name
-  assert_equal("Salmon", @fish1.name)
-end
 
 end

@@ -9,13 +9,7 @@ class Bear
   end
 
   def food_in_stomach
-    @stomach.count
+    return @stomach.length
   end
-
-  def take_fish_from_river
-    
-  end
-
-
 
 end
